@@ -25,7 +25,19 @@ Da mehr Essen als normalerweise bestellt wird, ist der logische Schluss daraus, 
 \\
 Die Angreifbarkeit gegenüber Schadprogrammen oder Hacker aus dem Internet ist also erhöht.
 \\
-Abgesehen davon könnte auch einer der zahlreichen Lieferanten Spionageabsichten haben.
+Abgesehen davon könnte auch einer der zahlreichen Lieferanten Spionageabsichten haben. Beispielsweise könnte er versuchen mit einem WiFi-fähigen Gerät Funkverkehr abzuhören oder mit Schadsoftware ausgestattete USB-Sticks in Umlauf zu bringen.
+\\
+In jedem Fall würde das Schutzziel der Vertraulichkeit also bedroht. Sollte ein Eindringen in das System per Schadsoftware gelingen, wäre ein verändernder Zugriff denkbar, sodass auch die Integrität und Verfügbarkeit als gefährdet einzustufen wäre.
+\\
+\\
+(3b) \quad
+Hier könnten alle drei Schutzziele beeinflusst werden. Bei einem öffentlichen, nicht verschlüsselten WLAN-Netz wäre es durchaus möglich, einen vorher manipulierten AP mit der gleichen SSID und entsprechender Schadsoftware auszustatten, auf die sich in der Nähe befindliche Clients dann automatisch verbinden.
+\\
+Den über den AP laufenden Netzwerkverkehr könnte man dann loggen und später auswerten, damit wäre das Schutzziel der Vertraulichkeit verletzt.
+\\
+Ebenfalls wäre eine Echtzeitmanipulation der Verbindung denkbar, indem man ankommende Daten in einen Cache lädt, diese verändern und erst dann zu dem Zielhost übermittelt.
+\\
+Auch das Schutzziel der Verfügbarkeit ist gefährdet, da so einzelne Zielhost oder der komplette Datenverkehr blockiert werden könnten.
 
 
 
