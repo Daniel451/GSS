@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.3.27)  14 APR 2015 14:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.3.27)  14 APR 2015 14:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -341,15 +341,18 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 21.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 21.
+Underfull \hbox (badness 10000) in paragraph at lines 13--21
 
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 25.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 25.
 <fbi.pdf, id=1, 172.645pt x 172.645pt>
 File: fbi.pdf Graphic file (type pdf)
  <use fbi.pdf>
-Package pdftex.def Info: fbi.pdf used on input line 21.
+Package pdftex.def Info: fbi.pdf used on input line 25.
 (pdftex.def)             Requested size: 42.67912pt x 42.67905pt.
 
 Overfull \vbox (29.27908pt too high) has occurred while \output is active []
@@ -362,17 +365,17 @@ Overfull \vbox (29.27908pt too high) has occurred while \output is active []
 Here is how much of TeX's memory you used:
  4392 strings out of 493304
  63496 string characters out of 6139871
- 176985 words of memory out of 5000000
+ 177985 words of memory out of 5000000
  7792 multiletter control sequences out of 15000+600000
  11293 words of font info for 28 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 47i,14n,48p,319b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,14n,48p,343b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}<
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
 hare/texmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/typ
 e1/public/cm-super/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 fss2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb>
-Output written on solution1.pdf (1 page, 60768 bytes).
+Output written on solution1.pdf (1 page, 62470 bytes).
 PDF statistics:
  32 PDF objects out of 1000 (max. 8388607)
  22 compressed objects within 1 object stream
