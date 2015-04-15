@@ -104,11 +104,18 @@ Erreichbarkeit kann ebenso wie die Verfügbarkeit durch regelmäßige Überprüfungen
 
 (1) \quad
 Das Angreifermodell beschreibt die Eigenschaften eines potentiellen Angreifers im Kontext eines worst-case Szenarios, also mit maximalen Möglichkeiten in der spezifischen Situation. Die Ausprägung der
-Eigenschaften wird also als größtmöglich angenommen, jedoch in Abhängigkeit der maximalen Schutzmechanismen des Systems. Das Angreifermodell beschreibt also die Situation eines starken Angreifers, bei
-dem die implementierten Schutzmechanismen aber noch Wirkung zeigen. Dies dient zur Charakterisierung der möglichen Angriffsszenarios sowie als auch der Beschreibung der Schutzmechanismen.
-Die Aufstellung eines Angreifermodells macht insofern Sinn, als damit die aktuelle Sicherheitsarchitektur analysiert werden kann. Nach der Aufstellung ist ersichtlich, welche Angriffsszenarien maximal abgewehrt
+Eigenschaften wird also als größtmöglich angenommen, jedoch in Abhängigkeit der maximalen Schutzmechanismen des Systems. Das Angreifermodell beschreibt also die Situation eines starken Angreifers, bei dem die implementierten Schutzmechanismen aber noch Wirkung zeigen. Dies dient zur Charakterisierung der möglichen Angriffsszenarien sowie  der Beschreibung der Schutzmechanismen.
+Die Aufstellung eines Angreifermodells macht insofern Sinn, als dass damit die aktuelle Sicherheitsarchitektur analysiert werden kann. Nach der Aufstellung ist ersichtlich, welche Angriffsszenarien maximal abgewehrt
 werden könnten, was die Einschätzung der aktuellen Sicherheit erleichtert und i.d.R. Handlungsbedarf respektive Verbesserungsmöglichkeiten aufzeigt, denn für entsprechend entdeckte Defizite kann dann eine
-Lösung erarbeitet werden.
+Lösung erarbeitet werden. Mögliche Systemschwachstellen bzw. mögliche Angriffspunkte werden erkannt und können behoben werden. Zusätzlich dazu können potentielle Risikobereiche identifiziert werden, woduch das Bewusstsein zur besonderen Vorsicht im Umgang mit diesen Bereichen geschärft wird.
+In einem Angreifermodell werden zunächst die Rollen des Angreifers abgebildet, dies umschreibt das Verhaltensmuster des Angreifers. Mögliche vorstellbare Ausprägungen wären Benutzer eines Dienstes,
+Betreiber eines Dienstes, Wartungsarbeiter eines Dienstes, Außenstehender mit Zugriff auf das Netzwerk usw. Kombinationen aus mehreren Ausprägungen sind denkbar.
+Hinzu kommt die Verbreitung des Angriffs, dies umschreibt die angreifbaren Lokalitäten des Systems, dies sind alle Stellen an denen der Angreifer das System manipulieren oder ausspähen kann.
+Des Weiteren wird das Verhalten des Angreifers beschrieben, welches passiv oder aktiv sein kann. Ein Ausspähen von Daten des Systems, also ein beobachtendes Verhalten, kann sowohl passiv als
+auch aktiv geschehen. Ein manipulatives Verhalten, also ein veränderndes Verhalten, kann nur aktiv passieren.
+Als letztes wird die Rechenkapazität des Angreifers genannt. Angenommen der Angreifer hätte unendliche Rechenkapazitäten zu Verfügung, dann wären herkömmliche Schutzmaßen nutzlos. Dies wird auch als informationstheoretischer Anfgriff bezeichnet. Die eher an der Realität orientierte Alternative ist bei dem Angreifer beschränkte Ressourcen zu vermuten, dies wäre ein komplexitätstheoretischer Angriff. Bei einem solchen
+Angriff hat der Angreifer endliche Rechenkapazitäten, sodass z.B. sehr komplexe Passwörter als sicher angenommen werden können, da die durchschnittliche Zeit zum Knacken der Passwörter bei ausreichender
+Komplexität schnell Hunderte oder Tausende von Jahren betragen kann.
 
 
 
