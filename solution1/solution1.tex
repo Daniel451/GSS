@@ -14,7 +14,7 @@
 \aufgabe{Allgemeine Aussagen zur IT-Sicherheit}
 
 (1) \quad
-Ein verteiltes System bietet insofern eine erhöhte Sicherheit, als dass das System aus mehreren Teilkomponenten besteht, eine Infizierung oder ein Sicherheitsbruch einer Teilkomponente also nichtnotwendigerweise alle Teilkomponenten betrifft, was bei einem nicht-verteilten System der Fall wäre.
+Ein verteiltes System bietet insofern eine erhöhte Sicherheit, als dass das System aus mehreren Teilkomponenten besteht, eine Infizierung oder ein Sicherheitsbruch einer Teilkomponente also nicht notwendigerweise alle Teilkomponenten betrifft, was bei einem nicht-verteilten System der Fall wäre.
 \\
 Ein Nachteil eines verteilten System gegenüber eines nicht-verteilten ist der erhöhte Wartungs-/Installationsaufwand, da mehrere Systeme offensichtlich einen größeren Ressourcenverbrauch bedeuten als einzelne, in sich geschlossene Systeme.
 \\
@@ -47,18 +47,55 @@ Auch das Schutzziel der Verfügbarkeit ist gefährdet, da so einzelne Zielhost ode
 
 \aufgabe{Schutzziele}
 
-(1a) \quad \textbf{Anonymität.} Bei der Anonymität können verschiedene Dienste vom Nutzer verwendet werden, ohne das dieser in irgendeiner Art und Weise seine Identität preisgibt. Selbst gegenüber dem Kommunikationspartner, beispielsweise beim Download einer öffentlichen Datei über eine verschlüsselte, nicht protokollierte Verbindung, bleibt die Identität der Nutzer unbekannt. Die Identifizierbarkeit des Nutzers darf also unter keinen Umständen gegeben sein. Eine Verschärfung der Anonymität stellt die Unbeobachtbarkeit dar.
+(1a) \quad \textbf{Anonymität.}
+Bei der Anonymität können verschiedene Dienste vom Nutzer verwendet werden, ohne das dieser in irgendeiner Art und Weise seine Identität preisgibt. Selbst gegenüber dem Kommunikationspartner, beispielsweise beim Download einer öffentlichen Datei über eine verschlüsselte, nicht protokollierte Verbindung, bleibt die Identität der Nutzer unbekannt. Die Identifizierbarkeit des Nutzers darf also unter keinen Umständen gegeben sein. Eine Verschärfung der Anonymität stellt die Unbeobachtbarkeit dar.
 \\
-\textbf{Unbeobachtbarkeit.} Das Konzept der Unbeobachtbarkeit sichert dem Nutzer eines Dienstes oder einer Ressource zusätzlich zu, dass der Datenaustausch gegenüber Dritten unbeobachtbar bleibt, d.h. es kann nicht festgestellt werden, dass überhaupt kommuniziert wurde. Sowohl das Senden, als auch der eigentliche Datentransfer, sowie der Erhalt von Daten sind nicht festellbar.
+\textbf{Unbeobachtbarkeit.}
+Das Konzept der Unbeobachtbarkeit sichert dem Nutzer eines Dienstes oder einer Ressource zusätzlich zu, dass der Datenaustausch gegenüber Dritten unbeobachtbar bleibt, d.h. es kann nicht festgestellt werden, dass überhaupt kommuniziert wurde. Sowohl das Senden, als auch der eigentliche Datentransfer, sowie der Erhalt von Daten sind nicht feststellbar.
 \\
-\textbf{Pseudonymität.} Die Pseudonymität ist ein schwächeres Konzept im Vergleich zur Anonymität. Der Nutzer ist in seiner Identität gegenüber unbefugten Dritten und dem eigentlichen Kommunikationspartner anonym,  jedoch ist der Nutzer über sein Pseudonym bestimmten Personen/Systemen bekannt.
+\textbf{Pseudonymität.}
+Die Pseudonymität ist ein schwächeres Konzept im Vergleich zur Anonymität. Der Nutzer ist in seiner Identität gegenüber unbefugten Dritten und dem eigentlichen Kommunikationspartner anonym,  jedoch ist der Nutzer über sein Pseudonym bestimmten Personen/Systemen bekannt.
 EIn Beispiel wäre der Abschluss eines Handels über eine entsprechende Plattform, bei der das Pseudonym des Nutzers als Käufer dem Verkäufer gegenüber bekannt gemacht wird.
 \\
 \\
 (1b) \quad
-\textbf{Vertraulichkeit.} Die Vertraulichkeit gewährleistet die Geheimhaltung von Daten während ihres Übertragungsprozesses zwischen den Kommunikationspartnern, beispielsweise mittels Verschlüsselung. Den Inhalt der Kommunikationsdaten kennen also lediglich die kommunizierenden Parteien.
+\textbf{Vertraulichkeit.}
+Die Vertraulichkeit gewährleistet die Geheimhaltung von Daten während ihres Übertragungsprozesses zwischen den Kommunikationspartnern, beispielsweise mittels Verschlüsselung. Den Inhalt der Kommunikationsdaten kennen also lediglich die kommunizierenden Parteien.
 \\
-\textbf{Verdecktheit.} Bei der Verdecktheit werden die zu übertragenden Daten versteckt übermittelt, sodass die Existenz der verdeckt übertragenden Daten ausschließlich den kommunizierenden Parteien bekannt ist. Ein einfaches, analoges Beispiel wäre ein Brief, auf dem zusätzlich zu einer belanglosen Nachricht eine weitere, verdeckte Botschaft mit Geheimtinte geschrieben wurde.
+\textbf{Verdecktheit.}
+Bei der Verdecktheit werden die zu übertragenden Daten versteckt übermittelt, sodass die Existenz der verdeckt übertragenen Daten ausschließlich den kommunizierenden Parteien bekannt ist. Ein einfaches, analoges Beispiel wäre ein Brief, auf dem zusätzlich zu einer belanglosen Nachricht eine weitere, verdeckte Botschaft mit Geheimtinte geschrieben wurde.
+\\
+\\
+(2a) \quad
+\textbf{Integrität und Zurechenbarkeit.} Die Integrität von Daten beschreibt die Feststellbarkeit jeglicher Manipulation der Daten im Vergleich zu dem Originalzustand. Ist die Integrität von Daten zwischen Kommunikationspartnern gesichert, so kann jedwede Veränderung des Inhalts, also der Daten selbst, von den Kommunikationspartnern festgestellt werden und das unabhängig davon, ob die Daten vom Sender, vom Empfänger oder von einem Dritten verändert wurden.
+\\
+Bei der Zurechenbarkeit hingegen wird nicht der Zustand einer Datei beschrieben, sondern die Sendung bzw. der Empfang der Daten. Hiermit kann das Verschicken oder das Erhalten einer Nachricht bewiesen werden.
+\\
+\\
+(2b) \quad
+\textbf{Verfügbarkeit und Erreichbarkeit.}
+Das Schutzziel der Verfügbarkeit beschreibt die Möglichkeit der Nutzung eines bestimmten Dienstes zu jedem Zeitpunkt, an dem der Nutzer den Dienst nutzen möchte. Die Verfügbarkeit stellt damit eine Inanspruchnahme eines Dienstes zu jedem gewünschten Zeitpunkt dar. Die Erreichbarkeit hingegen garantiert nicht die ordnungsgemäße Nutzbarkeit eines Dienstes, sondern lediglich die Erreichbarkeit des Dienstanbieters (Ressourcen, Klienten, Menschen, ...).
+\\
+\\
+(3) \quad
+\textbf{Techniken.}
+Anonymität kann gewährleistet werden, wenn keine zur Identifizierung dienlichen Nutzerdaten während der Nutzung eines Dienstes protokolliert werden.
+\\
+Unbeobachtbarkeit ist umsetzbar, wenn weder Nutzer noch Betreiber oder Dritte technisch feststellen können, dass zur Nutzungszeit eines Dienstes überhaupt eine Nutzung stattfindet.
+\\
+Pseudonymität wird erreicht, wenn keine persönlichen, der Identifizierung dienlichen Daten protokolliert werden, sondern den Nutzern lediglich Pseudonyme zugeteilt werden, dessen Aktionen protokolliert werden.
+\\
+Vertraulichkeit bei einem Datenaustausch ist realisierbar, wenn nur die Kommunikationspartner Zugriff auf den Inhalt der Daten haben, die Daten müssen dementsprechend verschlüsselt werden um diesem Anspruch zu genügen.
+\\
+Um Verdecktheit bei einer Kommunikation umzusetzen muss die eigentliche Nachricht versteckt werden, sodass die verdeckte Nachricht nicht feststellbar ist beim Datenaustausch. Bei analogen Medien wäre beispielsweise Geheimtinte denkbar, bei digitalen Medien das einbetten der Nachricht in ein Bild, in Metadaten, in scheinbar freien Speicherplatz eines Speichermediums, ...
+\\
+Die Integrität attestiert den Originalzustand von Daten. Dies kann mit einer Hashfunktion gewährleistet werden. Bei Sendung der Daten wird mittels einer Hashfunktion ein Hashwert erstellt, wird später auch nur ein einziges Bit des Inhalts geändert, ändert sich ebenfalls der Hashwert womit die Integrität der Daten verletzt ist.
+\\
+Die Zurechenbarkeit kann z.B. garantiert werden, wenn beim Senden oder Empfangen von Daten entsprechende Protokolle erstellt und automatisiert gesendet werden.
+\\
+Die Verfügbarkeit eines Dienstes ist nur gewährleistbar, wenn die Verfügbarkeit regelmäßig überprüft wird. Bei der Verfügbarkeit von Onlinediensten auf Servern beispielsweise werden regelmäßige Pings und andere Überprüfungssignale gesendet und dessen ordnungsgemäße Rücksendung erwartet. Antwortet ein Dienst nicht, ist seine Nicht-Verfügbarkeit sehr wahrscheinlich und entsprechendes Technikpersonal kann benachrichtigt werden. Um trotz erwartbarer Fehlermargen im Jahresmittel eine hohe Verfügbarkeit zu erreichen, können verteilte Systeme genutzt werden. Beispielsweise ist es möglich, zwei Server parallel bereit zu stellen wobei einer als Ausfallsicherung fungiert, die einspringt, sobald der erste Server nicht mehr ordnungsgemäß arbeitet.
+\\
+Erreichbarkeit kann ebenso wie die Verfügbarkeit durch regelmäßige Überprüfungen und die Parallelbereitstellung sowie Verteilung von Diensten gewährleistet werden.
 
 
 
