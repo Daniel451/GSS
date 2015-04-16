@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.2.21)  16 APR 2015 00:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.2.21)  16 APR 2015 04:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -263,39 +263,74 @@ Package: inputenc 2014/04/30 v1.2b Input encoding file
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2014/04/30 v1.2b Input encoding file
-))) (./solution1.aux)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2011/10/22 v5.1d context-sensitive quotations
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count91
+)
+\etb@tempcnta=\count92
+)
+\csq@reset=\count93
+\csq@gtype=\count94
+\csq@glevel=\count95
+\csq@qlevel=\count96
+\csq@maxlvl=\count97
+\csq@tshold=\count98
+\csq@ltx@everypar=\toks19
+
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2011/10/22 v5.1d csquotes generic definitions
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)
+Package csquotes Info: Enabling multilingual quotes.
+Package csquotes Info: Redefining alias 'german' -> 'german/quotes'.
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+
+(./solution1.aux)
 \openout1 = `solution1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 9.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 11.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count91
+\scratchcounter=\count99
 \scratchdimen=\dimen117
 \scratchbox=\box27
-\nofMPsegments=\count92
-\nofMParguments=\count93
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count94
+\nofMPsegments=\count100
+\nofMParguments=\count101
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count102
 \MPscratchDim=\dimen118
-\MPnumerator=\count95
-\makeMPintoPDFobject=\count96
-\everyMPtoPDFconversion=\toks20
+\MPnumerator=\count103
+\makeMPintoPDFobject=\count104
+\everyMPtoPDFconversion=\toks21
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -344,48 +379,48 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Underfull \hbox (badness 10000) in paragraph at lines 16--44
+Underfull \hbox (badness 10000) in paragraph at lines 18--46
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--44
+Underfull \hbox (badness 10000) in paragraph at lines 18--46
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--44
+Underfull \hbox (badness 10000) in paragraph at lines 18--46
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--99
+Underfull \hbox (badness 10000) in paragraph at lines 52--101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--99
+Underfull \hbox (badness 10000) in paragraph at lines 52--101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--99
+Underfull \hbox (badness 10000) in paragraph at lines 52--101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--99
+Underfull \hbox (badness 10000) in paragraph at lines 52--101
 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 99.
+(Font)              <7> on input line 101.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 99.
+(Font)              <5> on input line 101.
 <fbi.pdf, id=1, 172.645pt x 172.645pt>
 File: fbi.pdf Graphic file (type pdf)
  <use fbi.pdf>
-Package pdftex.def Info: fbi.pdf used on input line 99.
+Package pdftex.def Info: fbi.pdf used on input line 101.
 (pdftex.def)             Requested size: 42.67912pt x 42.67905pt.
 
 Overfull \vbox (29.27908pt too high) has occurred while \output is active []
@@ -397,7 +432,7 @@ Overfull \vbox (29.27908pt too high) has occurred while \output is active []
 File: fbi.pdf Graphic file (type pdf)
 
 <use fbi.pdf>
-Package pdftex.def Info: fbi.pdf used on input line 99.
+Package pdftex.def Info: fbi.pdf used on input line 101.
 (pdftex.def)             Requested size: 42.67912pt x 42.67905pt.
 
 Overfull \vbox (29.27908pt too high) has occurred while \output is active []
@@ -406,40 +441,78 @@ Overfull \vbox (29.27908pt too high) has occurred while \output is active []
 [2]
 File: fbi.pdf Graphic file (type pdf)
  <use fbi.pdf>
-Package pdftex.def Info: fbi.pdf used on input line 119.
+Package pdftex.def Info: fbi.pdf used on input line 121.
 (pdftex.def)             Requested size: 42.67912pt x 42.67905pt.
 
 Overfull \vbox (29.27908pt too high) has occurred while \output is active []
 
 
 [3]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 142.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 142.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 142.
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--176
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--176
+
+ []
+
 File: fbi.pdf Graphic file (type pdf)
- <use fbi.pdf>
-Package pdftex.def Info: fbi.pdf used on input line 129.
+<use fbi.pdf>
+Package pdftex.def Info: fbi.pdf used on input line 176.
 (pdftex.def)             Requested size: 42.67912pt x 42.67905pt.
 
 Overfull \vbox (29.27908pt too high) has occurred while \output is active []
 
 
-[4] (./solution1.aux) ) 
+[4]
+File: fbi.pdf Graphic file (type pdf)
+ <use fbi.pdf>
+Package pdftex.def Info: fbi.pdf used on input line 178.
+(pdftex.def)             Requested size: 42.67912pt x 42.67905pt.
+
+Overfull \vbox (29.27908pt too high) has occurred while \output is active []
+
+
+[5] (./solution1.aux) ) 
 Here is how much of TeX's memory you used:
- 4418 strings out of 493105
- 64000 string characters out of 6137072
- 189979 words of memory out of 5000000
- 7822 multiletter control sequences out of 15000+600000
- 11293 words of font info for 28 fonts, out of 8000000 for 9000
+ 5335 strings out of 493105
+ 77171 string characters out of 6137072
+ 214021 words of memory out of 5000000
+ 8719 multiletter control sequences out of 15000+600000
+ 15095 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,14n,48p,769b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 47i,14n,48p,953b,347s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.e
-nc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/share/texmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts
-/type1/public/cm-super/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm-sup
-er/sfss2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1095.pfb></us
-r/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb>
-Output written on solution1.pdf (4 pages, 91863 bytes).
+nc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss2488.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfsx1095.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfsx1440.pfb>
+Output written on solution1.pdf (5 pages, 124487 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

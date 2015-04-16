@@ -1,6 +1,8 @@
 \documentclass[ngerman]{fbi-aufgabenblatt}
 
 
+\usepackage[autostyle=true,german=quotes]{csquotes}
+
 \renewcommand{\Aufgabenblatt}{1}
 \renewcommand{\Gruppe}{G01}
 \renewcommand{\KleinGruppe}{A}
@@ -120,10 +122,57 @@ Komplexität schnell Hunderte oder Tausende von Jahren betragen kann.
 
 
 
+\aufgabe{Passwortsicherheit}
 
-
-
-
+(1) \quad
+Würden z.B. Passwörter von Kunden beispielsweise in einer Datenbank in Klartext abgelegt werden, so könnte zum einen der Administrator der Datenbank die Passwörter auslesen und zum anderen könnte ein potentieller Angreifer, der die in der Datenbank hinterlegten Daten kopiert, die Passwörter direkt auslesen.
+\\
+Beide Szenarien können durch das hashen von Passwörtern vermieden werden.
+\\
+Im einfachsten Fall wird ein Kennwort bei Erstspeicherung vom Server empfangen und direkt gehasht sowie beispielsweise in einer Datenbank (gehasht) gespeichert. Zukünftig, wenn der Nutzer sich ernaut authentifzieren möchte/muss, wird von seinem Passwort erneut der Hashwert gebildet und mit dem in der Datenbank gespeicherten Hash verglichen. Bei Übereinstimmung ist gewährleistet, dass das Passwort korrekt angegeben wurde.
+\\
+Dieses Verfahren ist sicherer, weil so zum größten Teil der Zeit nur mit den Hashwerten des Passworts gearbeitet wird und da aus einem Hashwert nicht ohne beträchtlichen Aufwand (teilweise sogar nahezu unmöglich) der Originalwert errechnet werden kann, ist das Passwort sicher unter Verschluss.
+\\
+Der verwendete Hash-Algorithmus bei dem Passwort von \enquote{leroy} ist MD5 und das Passwort zu dem Hashwert \enquote{06e2b745f3124f7d670f78eabaa94809} ist \enquote{hund}. Hashverfahren sind zwar irreversibel, man kann aber (beispielsweise über Rainbow-Tables) nach dem zugehörigem Urbild für ein entsprechendes Bild suchen.
+\\
+\\
+(2) \quad
+Nehmen wir die \enquote{Standardzeichen} für so einen Alphanumerischen Zeichensatz an:
+\\
+$A-Z,\; a-z,\; 0-9$, so erhalten wir 62 mögliche Zeichen. Da bekannt ist, dass es sich maximal um ein achtstelliges Passwort handeln kann, ergeben sich so $62^8 = 218.340.105.584.896$ mögliche Passwortkombinationen.
+\\
+Gegeben ein Passwort-Cracking-Tool mit einer Leistung von einer Million Passwörtern pro Sekunde würde die Entschlüsselungszeit eines solchen Passworts maximal gerundet $\frac{218.340.105.584.896}{1.000.000} = 218.340.105,58$ Sekunden dauern. Das entspricht etwa $60.650$ Stunden, bzw. ca. $2.527$ Tagen oder auch gerundet $6,92$ Jahren.
+\\
+Bei Ignorierung der Groß-/Kleinschreibung reduzieren sich die möglichen Zeichen auf 36, was bei einem maximal achtstelligem Passwort maximal $36^8 = 2.821.109.907.456$ Kombinationen ergeben.
+\\
+Damit würde sich die Entschlüsselungszeit auf gerundet $\frac{2.821.109.907.456}{1.000.000} = 2.821.110$ Sekunden verringern. Das entspricht etwa $784$ Stunden, bzw. ca. 33 Tagen.
+\\
+\\
+(3) \quad
+Bei herkömmlichen Angriffen wie z.B. dem reinen bruteforcen hängt das Knacken eines Passworts rein von der Zeitkomplexität ab. Bei Rainbow-Tables werden vorkalkulierte Tabellen von Klartextpasswörtern und dazugehörigen Hashwerten benutzt, um die Zeitkomplexität drastisch zu verringern. Allerdings müssen derartige Tabellen relativ groß sein, um gute Ergebnisse beim Passwortknacken zu ermöglichen. Deshalb spricht man bei Rainbow-Tables von einem Time-Memory-Trade-Off, denn größere Tabellen (größere Speicherplatzkomplexität) spart viel Berechnungszeit bei Angriffen, andererseits dürfen die Tabellen nicht zu groß sein, da sie sonst RAM und/oder das permanente Speichermedium zu stark belasten. Es muss also ein \enquote{günstiger} Tradeoff zwischen Zeit und Speicherplatz gefunden werden, der die Zeitkomplexität ausreichend reduziert, die Speicherplatzkomplexität aber ebenfalls in bewältigbaren Maßen hält.
+\\
+Die Idee von Rainbow-Tables ist mit einem zufälligen Klartextpasswort anzufangen, davon den Hash-Wert zu berechnen, diesen mit einer beliebigen Reduktionsfunktion zurück zu rechnen zu einem Klartextpasswort, dieses erneut zu hashen usw.
+\\
+Typischerweise wird dieser Vorgang z.B. 10.000x wiederholt. Start- und Endwerte werden gespeichert. Bei einem Angriff können diese erzeugten Ketten nun durchlaufen werden und nach einem Hashwert durchsucht werden.
+\\
+Der Name Rainbow-Tables kommt daher, weil (um Kollisionen zu vermeiden), ein bewährtes Verfahren ist verschiedene Reduktionsfunktionen zu benutzen. Man kann sich also vorstellen, dass im ersten Schritt die rote Reduktionsfunktion genutzt wird, im zweiten die gelbe usw.
+\\
+\\
+(4) \quad
+Ein Salt macht die Generierung von Rainbow-Tables unwirtschaftlich, da die Zeit- und Platzkomplexität enorm steigt. Da das Passwort vor dem Hashen mit einem Salt (idealerweise zufällig berechnet) versehen wird, müsste man für jedes solche Passwort, das in einer Rainbow-Tabelle vorkommen soll, nun alle möglichen Salt-Kombinationen nutzen. Es müsste also für jeden möglichen Saltwert eine eigene Rainbow-Table erstellt werden.
+\\
+\\
+(5) \quad
+Das gesuchte Passwort ist \enquote{sonne}. Zuerst wurde ein deutschsprachiges Wörterbuch heruntergeladen. Das Programm wurde in Python geschrieben. In einer for-Schleife wird jede Zeile des Wörterbuchs eingelesen.
+Zuerst wird geprüft, ob das Wort länger als 5 Zeichen ist. Ist diese Überprüfung positiv, wird die aktuelle Iteration sofort übersprungen.
+Danach wird geprüft, ob das Wort Großbuchstaben enthält, ist dies der Fall, wird die aktuelle Iteration sofort übersprungen.
+In allen anderen Fällen wird an den Wert des Salts das aktuelle Wort konkateniert, sodass man z.B. \enquote{xohth4dew5p8baum} für das Wort \enquote{baum} erhält.
+Dann wird von diesem Wert (Salt+Wort) der MD5-Hash berechnet und verglichen mit dem gegebenen Hashwert \enquote{199f066a0bac4140e792d1d4a434ae44}.
+Die Schleife läuft so lange durch, bis entweder der aktuell errechnete Hash (Salt+Wort) mit dem gegebenen Hash übereinstimmt und damit das gesuchte Passwort gefunden wurde oder bis das Wörterbuch ein Mal komplett durchlaufen wurde.
+\\
+Zum Ermitteln des Passworts benötigte das Programm $0.26$s.
+\\
+Wäre das Salt im Vorfeld nicht bekannt, so müsste man einen zufälligen Salt errechnen und für jeden solchen errechneten Salt dann ein Mal das komplette Wörterbuch durchlaufen. Das würde die Zeitkomplexität enorm erhöhen.
 
 
 \end{document}
