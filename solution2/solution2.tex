@@ -45,4 +45,45 @@ Das Betriebssystem als virtuelle Maschine hat folgende Aufgaben:
 
 
 
+\aufgabe{Prozesse und Threads}
+
+(a) \quad Definitionen und Zusammenhänge
+
+Programm:
+Ein Programm ist eine Sequenz von Anweisungen in einer bestimmten Programmiersprache.
+Die Anweisungen bestehen aus verschiedenen Instruktionen und Kontrollstrukturen sowie aus Deklarationen,
+diese Anweisungen "steuern" und "benutzen" zur Ausführung den Programprozess und, im Fall von Multrithreaded-Anwendungen, die von dem Programm gestarteten Threads.
+
+Prozess:
+Ein Programm, welches gerade abläuft und durch das Betriebssystem verwaltet wird, nennt man Prozess. Ein Prozess besitzt statische und dynamische Daten während seiner Laufzeit, die nicht änderbar sind bzw. sich verändern können. Außerdem hat jeder Prozess einen Prozessadressraum.
+
+Thread:
+Threads, eine Art vereinfachter Prozesse, sind Programmabläufe, die keinen eigenen Prozessadressraum verwenden, sondern den Raum eines ihnen übergeordneten Prozesses "mitbenutzen".
+Die Erzeugung eines Threads ist deutlich effizienter als die eines Prozesses und eignet sich daher eher für Aufgaben von kurzer Dauer.
+\\
+\\
+(d) \quad Lebenszyklus eines Prozesses
+
+X: Ready/Wait: Warten auf Zuteilung von Prozessorzeit sowie weiteren Systemressourcen. Der Prozess wurde also ordnungsgemäß erstellt und wartet auf Ausführung.
+
+Y: Run: Der Prozess wird gerade abgearbeitet/ausgeführt.
+
+Z: Block: Der Prozess wurde pausiert, z.B. weil andere Prozesse gerade eine höhere Ausführungspriorität haben oder weil auf Benutzereingaben gewartet wird.
+
+a: Prozess wurde in die Prozessliste eingetragen sowie die Daten und der Code geladen, damit kann er als nächstes vom Scheduler des Betriebssystems in die Queue übernommen werden,
+also auf "Wait" geschaltet werden.
+
+b: Für den Prozess ist nun Prozessorzeit frei, ebenso sind weitere nötige Systemressourcen allokiert, der Prozess kann also arbeiten und wird in den State "Run" überführt.
+c: Der Prozess muss z.B. auf Benutzereingaben warten, dann ist die Ausführung anderer Prozesse prioritär. Der Prozess wird damit in den State "Block" überführt.
+
+d: Auf die zu wartenden Eingaben/Ergebnisse wurde gewartet und die Daten sind nun verfügbar, damit könnte der Prozess wieder aktiviert werden. Da ihm allerdings
+erneut Prozessorzeit reserviert werden muss, muss er zunächst wieder in den State "Ready/Wait" überführt werden. Die nötigen Systemressourcen müssen also erst
+wieder vorhanden sein.
+
+e: Sind alle Aufgaben und Threads eines Prozesses fertig und/oder bereits terminiert, so kann der Prozess insgesamt terminieren und damit aus der Prozessliste entfernt werden.
+
+f: Sind z.B. alle aktuellen Threads eines Prozesses durch mit ihrer Arbeit, müssen aber selbst wiederum neue Threads starten, kehrt man von der aktuellen Ausführung ("Run")
+zur Reservierung der benötigten Systemressourcen ("Ready/Wait") zurück.
+
+
 \end{document}

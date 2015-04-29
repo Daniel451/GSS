@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.2.21)  29 APR 2015 20:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.2.21)  29 APR 2015 21:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -399,14 +399,19 @@ Overfull \hbox (1.29083pt too wide) in paragraph at lines 42--43
 , um dem Be-nut-zer die Ar-beit/Verwaltung
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--66
+
+ []
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 48.
+(Font)              <7> on input line 66.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 48.
+(Font)              <5> on input line 66.
 <fbi.pdf, id=1, 172.645pt x 172.645pt>
 File: fbi.pdf Graphic file (type pdf)
  <use fbi.pdf>
-Package pdftex.def Info: fbi.pdf used on input line 48.
+Package pdftex.def Info: fbi.pdf used on input line 66.
 (pdftex.def)             Requested size: 42.67912pt x 42.67905pt.
 
 Overfull \vbox (29.27908pt too high) has occurred while \output is active []
@@ -415,24 +420,33 @@ Overfull \vbox (29.27908pt too high) has occurred while \output is active []
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
  <./fbi.pdf>]
-(./solution2.aux) ) 
+File: fbi.pdf Graphic file (type pdf)
+
+<use fbi.pdf>
+Package pdftex.def Info: fbi.pdf used on input line 89.
+(pdftex.def)             Requested size: 42.67912pt x 42.67905pt.
+
+Overfull \vbox (29.27908pt too high) has occurred while \output is active []
+
+
+[2] (./solution2.aux) ) 
 Here is how much of TeX's memory you used:
- 5325 strings out of 493105
- 77041 string characters out of 6137072
- 205021 words of memory out of 5000000
- 8713 multiletter control sequences out of 15000+600000
+ 5334 strings out of 493105
+ 77176 string characters out of 6137072
+ 206021 words of memory out of 5000000
+ 8722 multiletter control sequences out of 15000+600000
  11293 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,14n,48p,798b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}<
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-fss2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb>
-Output written on solution2.pdf (1 page, 63372 bytes).
+ 47i,14n,48p,798b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.e
+nc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm-sup
+er/sfss2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb>
+Output written on solution2.pdf (2 pages, 68357 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 35 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
