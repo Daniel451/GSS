@@ -1,0 +1,48 @@
+\documentclass[ngerman]{fbi-aufgabenblatt}
+
+
+\usepackage[autostyle=true,german=quotes]{csquotes}
+
+\renewcommand{\Aufgabenblatt}{1}
+\renewcommand{\Gruppe}{G01}
+\renewcommand{\KleinGruppe}{A}
+\renewcommand{\Teilnehmer}{Huynh, Krempels, Rupnow, Speck}
+
+\begin{document}
+
+
+
+
+\aufgabe{Grundlagen von Betriebssystemen}
+
+(a) \quad Das Betriebssystem als Betriebsvermittler:
+\\
+Das Betriebssystem übernimmt die Allokation, also die Vermittlung/Buchung von Systemressourcen,
+dies schließt beispielsweise Speicher (z.B. RAM) oder Rechenzeit auf dem Hauptprozessor ebenso ein
+wie die Nutzung von Systemgeräten, Netzwerkschnittstellen, usw.
+\\
+\\
+Betriebssystem als virtuelle Maschine:
+\\
+Um eine zunehmend "komfortable" Nutzung der Systemeigenschaften zu ermöglichen muss
+von der Hardwareebene abstrahiert werden. Das Betriebssystem wird dabei als eine Art virtuelle
+Maschine tätig. Ohne diese Abstraktion müsste Software explizit für die aktuell verwendete Hardware
+kompiliert werden und der Benutzer zu jeder Zeit alle Hardwareschichten kennen und mitunter verwalten.
+\\
+\\
+(b) \quad Das Betriebssystem als Betriebsvermittler hat folgende Aufgaben:
+
+1. Verwaltung der Betriebsmittel, also den Bedarf von Prozessen auf Anfrage hin abzudecken, sowie die Betriebsmittel möglichst effektiv zu verteilen.
+
+2. Es können mehere Programme auf die selbe Systemressource zugreifen; daher muss das Betriebsystem mit Konflikten über die Betriebsmittlel umgehen können. Beispielsweise eine Deadlock Situation, wie in der Vorlesung beschrieben wurde.
+\\
+\\
+Das Betriebssystem als virtuelle Maschine hat folgende Aufgaben:
+
+1. Die Nutzung eines Rechners möglichst einfach zu gestalten, es sollten also spezifische Informationen über die vorhandene Hardware "versteckt" werden, um dem Benutzer die Arbeit/Verwaltung mit dem System zu erleichtern. 
+
+2. Ebenso zählt dazu die Vermittlung zwischen Hardware und Software, damit nicht jede Applikation spezifisch für die aktuelle Architektur neu kompiliert werden muss.
+
+
+
+\end{document}
