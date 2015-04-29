@@ -2,6 +2,7 @@
 
 
 \usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage{listings}
 
 \renewcommand{\Aufgabenblatt}{1}
 \renewcommand{\Gruppe}{G01}
@@ -84,6 +85,37 @@ e: Sind alle Aufgaben und Threads eines Prozesses fertig und/oder bereits termin
 
 f: Sind z.B. alle aktuellen Threads eines Prozesses durch mit ihrer Arbeit, müssen aber selbst wiederum neue Threads starten, kehrt man von der aktuellen Ausführung ("Run")
 zur Reservierung der benötigten Systemressourcen ("Ready/Wait") zurück.
+
+\newpage
+
+\aufgabe{n-Adressmaschine}
+
+(a) \quad Es gilt zu berechnen: $\; R = ((a1+a2) / a3)  +  ((b1-b2) / b3)$
+\\
+\begin{lstlisting}
+ADD >a1<>a2<   // a1 wird mit a2 addiert und der Wert
+               // wird in a2 gespeichert
+
+DIV >a2<>a3>   // das neue a2 wird durch a3 geteilt
+               // und der Wert wird in a3 gespeichert
+
+SUB >b1<>b2<   // b2 wird von b1 subtrahiert und der
+               // Wert wird in b2 gespeichert
+
+DIV >b2<<b3<   // das neue b2 wird durch b3 geteilt
+               // und der Wert wird in b3 gespeichert
+
+ADD >a3<>b3<   // a3 wird mit b3 addiert und somit hat
+               // man die Gleichung in b3 stehen
+\end{lstlisting}
+
+Gesamtaufwand für Lösung der Aufgabe:
+
+Es sind 5 Befehle mit 9 Leseaufträgen an Hsp./Cache und 5 Schreibaufträgen.
+
+n= Speicherzugriffzeit
+0,05*n= Befehlsausführungszeit (DIV, SUB, ADD..)
+Berechnungszeit: 5*0,05*n
 
 
 \end{document}
