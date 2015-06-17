@@ -53,17 +53,86 @@ Bei Vergabe eines Rabatts beispielsweise vom Kino wird dann ein zufälliger Schlü
 Bei diesem System würde sich der aufgedruckte Rabattcode ständig ändern, weil er immer mit einem zufälligem symmetrischen Schlüssel verschlüsselt ist. Kein Angreifer könnte einen Rabattcode einfach kopieren. Da der private Schlüssel des Kassenautomaten geheim ist, könnte ein potentieller Angreifer auch nicht die geheimen Rabattcodes auslesen, da er den Schlüssel $S$ nicht entschlüsseln kann. Somit könnte er auch nicht einfach selbst die Rabattcodes erzeugen.
 
 
+\newpage
+
 
 \aufgabe{Authentifizierungsprotokolle}
 
+(2) \quad Der Vorschlag des Systemadministrators zur Verbesserung des Systems macht keinen Unterschied. Solange die zufallsgenerierte Zahl nur vom Client generiert und vom Server nicht genutzt wird, könnte sowohl ein passiver als auch ein aktiver Angreifer den übermittelten, verschlüsselten String mitschneiden und zu einem späteren Zeitpunkt mittels Authentifikation an den Server senden. Die Zufallszahl müsste z.B. schon auf der Serverseite gespeichert werden und ein mehrmaliges Nutzen der gleichen Zufallszahl mit den gleichen Benutzerdaten verhindert werden, um diese Sicherheitslücke auszuschließen. Dieses Verfahren wäre aber nicht zielführend, da zum einen damit die möglichen, erfolgreichen Anmeldungen endlich wären und zum anderen im Verlaufe der Nutzung viel Overhead erzeugt werden würde, da mit der Zeit mit immer zahlreicher vorhandenen Zufallszahlen immer öfter eine erfolgreiche Anmeldung verweigert werden würde. Abgesehen davon verbraucht dieses Verfahren mit der Zeit auch immer mehr Speicherplatz.
+\\
+\\
+(3) \quad Das Mitschneiden von einem erfolgreichen Login kann nicht mehr genutzt werden, um einfach den gleichen übermittelten, verschlüsselten String dem Dienstanbieter zu senden, denn der Dienstanbieter gibt hier eine spezifische, selbsterzeugte Zufallszahl vor. Da es sich um ein einseitiges Challenge-Response-Verfahren handelt, könnte sich ein potentieller Angreifer immernoch als Dienstanbieter ausgeben/tarnen, um so die Benutzerdaten eines Nutzers zu erbeuten. Ein Bruteforceangriff wäre auch denkbar.
 
 
-\aufgabe{?Mensch ärgere Dich nicht? über das Telefon}
 
+\aufgabe{\enquote{Mensch ärgere Dich nicht} über das Telefon}
 
+\newpage
 
 \aufgabe{RSA-Verfahren}
 
+(2) \quad In der Aufgabe waren die Werte von $p, q, e$ gegeben mit: $p = 281, q = 389, e = 67$
+\\
+\\
+Mithilfe von Wikipedia fanden wir heraus, dass zur Entschlüsselung zwei wichtige Komponenten berechnet werden müssen, $N$ und $d$.
+\\
+Bei RSA ist $N$ durch $N = p * q$ gegeben. $d$, der Entschlüsselungsexponent, wiederum ist das multiplikative inverse von $e$ modulo $((p-1)*(q-1))$.
+\\
+\\
+Für $N$ ergibt sich also: $109.309 = p * q = N$.
+\\
+\\
+Um $d$ zu berechnen verwendeten wir Wolframalpha:
+\begin{lstlisting}
+	(281-1) * (389-1)                # evaluiert zu 108.640
+	inverse of 67 modulo 108640      # evaluiert zu   3.243
+\end{lstlisting}
+Damit hatten wir alle wichtigen Parameter für unser Programm:
+\\
+$p = 281, \; q = 389, \; e = 67, \; d = 3243, \; N = 109.309$
+\\
+\\
+Unser Programm sieht dabei wie folgt aus (Python):
+\lstset{
+	numbers=left,
+	stepnumber=1, 
+	numbersep=-25pt,   
+	firstnumber=1,
+	numberfirstline=true
+}
+\begin{lstlisting}[language=Python]
+	# Eine Liste mit allen verschlüsselten Werten
+	secretdata = [103625, ..., 62098]
+
+	p = 281       # gegeben in der Aufgabenstellung
+	q = 389       # gegeben in der Aufgabenstellung
+	e = 67        # gegeben in der Aufgabenstellung
+	N = 109309    # berechnet
+	d = 3243      # berechnet
+	
+	# Erzeugt eine Liste, indem jeder Wert von secretdata
+	# aufgerufen und mit der lambda-Funktion bearbeitet wird:
+	# x ist dabei ein einzelner Wert der Liste secretdata.
+	# str() wandelt die Rückgabe von uncichr() in einen
+	# String um und unichr() gibt einen Unicode für ein
+	# bestimmtes Zeichen zurück. Die Berechnung x**d % N
+	# berechnet das Ergebnis von x hoch d modulo N.
+	# Diese Formel haben wir ebenfalls Wikipedia entnommen.
+	# Jeder verschlüsselte Wert x wird so also entschlüsselt
+	# und dann in ein lesbares Zeichen umgewandelt.
+	decryptData = map(lambda x: str(unichr(x**d % N)), secretdata)
+	
+	# Erzeugt aus der Liste decryptData, die die
+	# entschlüsselten Werte enthält, einen einzigen String
+	decryptStr = "".join(decryptData)
+	
+	print decryptStr    # Ausgabe auf der Konsole
+\end{lstlisting}
+
+Die einzige Zeile, die den verschlüsselten Text entschlüsselt und tatsächlich etwas berechnet ist also in unserem Programm Zeile 20. Alle anderen Zeilen dienen lediglich als Datencontainer, der besseren Lesbarkeit oder Konsolenausgabe.
+
+Der entschlüsselte Text lautet:
+\quote{Fuer die GSS-Klausur sind folgende Themen wichtig: Schutzziele, Angreifermodelle, Rainbow Tables, die (Un-)Sicherheit von Passwoertern und dazugehoerige Angriffe, Zugangs- und Zugriffskontrolle, Biometrische Verfahren, Timing-Attack und Power-Analysis, Grundlagen der Kryptographie, Authentifikationsprotokolle, das RSA-Verfahren und natuerlich alle anderen Inhalte, die wir in der Uebung und der Vorlesung behandelt haben :-)}
 
 
 \end{document}
