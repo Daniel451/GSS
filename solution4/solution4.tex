@@ -4,6 +4,7 @@
 \usepackage[autostyle=true,german=quotes]{csquotes}
 \usepackage{listings}
 \usepackage{blockgraph}
+\usepackage{amsmath}
 
 \renewcommand{\Aufgabenblatt}{4}
 \renewcommand{\Gruppe}{G01}
@@ -147,18 +148,47 @@ Als Bedienzeit in der Formel für die Bediengüte haben wir die Bedienzeitforderun
 
 \aufgabe{Echtzeit \& Mehrprozessor-Scheduling}
 
-(2a) \quad Wenn die Deadlines aller Aufträge auf unbeschränkte Zeit eingehalten werden könnten, so muss es ein Zeit-Intervall geben, das (1) genau so lang ist, dass es ganzzahlig durch die Periodendauer aller Aufträge teilbar ist und (2) genug Platz für die Summe der  benötigten Bedienzeiten der Aufträge im Intervall bietet.
+(2a) \quad Um Deadlines multipler Aufträge jederzeit einhalten zu können, müsste der besagte, ideale Scheduler ein Zeitintervall finden, welches stets ausreichend Kapazitäten für die Summe der Bedienzeitforderungen aller Aufträge bietet.
+\\
+Ferner wäre es nötig, dass dieses Zeitintervall auch noch ganzzahlig, also ohne Divisionsrest, teilber durch die kumulierte Periodendauer aller Aufträge ist.
+\\
+\\
+Die Länge des Intervalls würde dabei dem kleinsten, gemeinsamen Vielfachen der Periodendauer aller Aufträge entsprechen:
+\\
+\begin{equation*}
+	kgV = 4 * 7 * 3 = 84  
+\end{equation*}
+\\
+Danach ergibt sich für die benötigte Bedienzeit für die einzelnen Aufträge durch:
+\\
+\begin{equation*}
+	\frac{\text{Länge-Intervall}}{\text{Periodendauer vom Auftrag}} = \text{Anzahl Perioden}
+\end{equation*}
+\\
+Und die insgesamt benötigte Bedienzeit durch:
+\\
+\begin{equation*}
+	\text{Anzahl Perioden} * \text{Bedienzeitforderung pro Periode} = \text{Gesamtbedienzeit}
+\end{equation*}
+\\
+Daraus ergibt sich für die Aufträge $A_1$, $A_2$ und $A_3$ folgendes:
 \begin{center}
-	Länge des Intervalls: $kgV(4;7;3) = 4 * 7 * 3 = 84$\bigskip\\
-	\begin{tabular}{l c c c}
-		Aufgabe & Anz. Perioden & & Benötigte Bedienzeit\\\hline
-		$A_1:$ & $84 : 4 = 21$ & $\rightarrow$ & $28 * 1 = 28$\\
-		$A_2:$ & $84 : 7 = 12$ & $\rightarrow$ & $21 * 1 = 21$\\
-		$A_3:$ & $84 : 3 = 28$ & $\rightarrow$ & $12 * 3 = 36$
+	\begin{tabular}{l c c}
+		Aufgabe & Anz. Perioden & Benötigte Bedienzeit\\\hline
+		\\
+		$A_1$ & $\frac{84}{4} = 21$  & $21 * 1 = 21$
+		\\
+		\\
+		$A_2$ & $\frac{84}{7} = 12$  & $12 * 3 = 36$
+		\\
+		\\
+		$A_3$ & $\frac{84}{3} = 28$  & $28 * 1 = 28$
 	\end{tabular}\bigskip\\
-	Gesamte benötigte Bedienzeit: $28 + 21 + 36 = 85$
+	Daraus resultiert die Bedienzeit insgesamt: $21 + 36 + 28 = 85$
 \end{center}
-Da insgesamt mehr Bedienzeit benötigt wird als im Intervall verfügbar ist, können die Deadlines selbst von einem idealen Scheduler nicht eingehalten werden.
+Insgesamt würde damit also mehr Bedienzeit benötigt, als das Intervall Kapazitäten hat verfügbar hat.
+\\
+Die Deadlines würden also auch von einem idealen Scheduler nicht eingehalten werden können.
 \\
 \\
 (2c)
@@ -167,6 +197,7 @@ Da insgesamt mehr Bedienzeit benötigt wird als im Intervall verfügbar ist, könne
 	\bglabelxx{0}
 	\bglabelxx{5}
 	\bglabelxx{10}
+	\bglabelxx{15}
 	
 	\bglabely{0}{CPU 0}
 	\bgblock[0]{0}{4}{$P_1$}
@@ -185,12 +216,12 @@ Da insgesamt mehr Bedienzeit benötigt wird als im Intervall verfügbar ist, könne
 	\bglabely{3}{CPU 3}
 	\bgblock[3]{3}{11}{$P_4$}
 \end{blockgraph}
-\\
-Da die Aufgabenstellung etwas schwammig formuliert war, haben wir angenommen, dass eine kleinere Zahl in der Priorität-Zeile eine höhere Priorität bedeutet, so hat zum Beispiel $P_3$ eine höhere Priorität als $P_2$.
 
-\section*{Aufgabe 3a}
-Aus Gründen der Darstellung sind sämtliche Werte durch 5 dividiert.
-Dies führt zu folgender Tabelle:
+
+\aufgabe{Prioritätsinversion}
+
+
+(3a) \quad Die in der Aufgabe genannten Werte wurden mit 5 dividiert, um sie leichter darzustellen:
 \begin{center}
 	\begin{tabular}{l c c c}
 		Auftrag & $M$ & $B$ & $Z$\\\hline
@@ -198,8 +229,10 @@ Dies führt zu folgender Tabelle:
 		Bedienzeit $b_i$ & $6$ & $2$ & $4$
 	\end{tabular}
 \end{center}
-und der Darstellung im Intervall $[0,34]$ mit $Prio(B) > Prio(Z) > Prio(M)$.\\
-\begin{blockgraph}{34}{5}{0.4}
+Es folgt die Intervallsdarstellung $[0,34]$ mit $Prio(B) > Prio(Z) > Prio(M)$:
+\\
+\\
+\begin{blockgraph}{35}{5}{0.4}
 	\bglabelxx{0}
 	\bglabelxx{5}
 	\bglabelxx{10}
@@ -207,7 +240,8 @@ und der Darstellung im Intervall $[0,34]$ mit $Prio(B) > Prio(Z) > Prio(M)$.\\
 	\bglabelxx{20}
 	\bglabelxx{25}
 	\bglabelxx{30}
-	\bglabelxx{34}
+	\bglabelxx{35}
+	
 	
 	\bglabely{4}{M}
 	\bgblock[4]{0}{6}{}
@@ -259,13 +293,22 @@ und der Darstellung im Intervall $[0,34]$ mit $Prio(B) > Prio(Z) > Prio(M)$.\\
 	\bgblock[0]{24}{28}{$Z$}
 	\bgblock[0]{28}{33}{$M$}
 	\bgblock[0]{33}{34}{$B$}
-\end{blockgraph}\\
-Zeitpunkt 12: B wird verzögert ausgeführt, da in $[6,12]$ M die Semaphore verwendet.\\
-Zeitpunkt 16: Z wird von B verdrängt.\\
-Zeitpunkt 24: M wird von Z verdrängt, Semaphore weiterhin gesperrt.\\
-Die letzte Verdrängung von M durch Z führt dazu, dass in $[24,32]$ Auftrag B seine Deadline nicht einhalten kann.
+\end{blockgraph}
+\\
+\small{* bisher haben wir die Blockgraphen stets einem Skalierungsfaktor von 1 gezeichnet, da dies bei uns der einzig verwendete Modus war, in dem die Grafik nicht verzerrt aussieht (Blöcke stets kleiner als 1x1 Kästchen, Zusammenhänge schwerer zu erkennen). Bei dieser Aufgabe war uns dies allerdings zu umständlich, da wir ansonsten 3 Blockgraphen hätten verwenden müssen.}
+\normalsize
+\\
+\\
+In der letzten Verdängung von M durch Z wird als Konsequenz davon in $[24,32]$ die Deadline von Auftrag B nicht eingehalten.
+\\
+\\
+Zeitpunkt 12 \quad Verzögerte Ausführung von B, weil in $[6,12]$ von M die Semaphore genutzt wird
+\\
+\\
+Zeitpunkt 16 \quad B verdängt Z.
+\\
+\\
+Zeitpunkt 24 \quad Z verdängt M, Semaphore ist gesperrt.
 
-\section*{Aufgabe 3b}
-Als Prioritätsinversion wird die unbeabsichtigte Umkehrung der Prioritäten bezeichnet: Auftrag B konnte Z nicht verdrängen, da die von B benötigte Semaphore noch von M verwendet wurde, sodass Z für eine kurze Zeit eine höhere Priorität als B hatte.
 
 \end{document}

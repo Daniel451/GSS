@@ -1,0 +1,69 @@
+\documentclass[ngerman]{fbi-aufgabenblatt}
+
+
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage{listings}
+\usepackage{blockgraph}
+\usepackage{amsmath}
+
+\renewcommand{\Aufgabenblatt}{5}
+\renewcommand{\Gruppe}{G01}
+\renewcommand{\KleinGruppe}{A}
+\renewcommand{\Teilnehmer}{Huynh, Krempels, Rupnow, Speck}
+
+\begin{document}
+
+
+
+\aufgabe{Zentrale Begriffe der Kryptographie}
+
+(1) \quad \textbf{Unterschiedliche Chiffren}: Bei einem \textbf{symmetrischen Kryptosystem} wird ein einziger Schlüssel zum ver- sowie entschlüsseln von Daten von beiden Kommunikationspartnern genutzt.
+\\
+Das zugrundeliegende Konzept von \textbf{asymmetrischen Kryptosystemen} sieht für jeden Kommunikationspartner hingegen jeweils einen öffentlichen und einen privaten Schlüssel vor. Die öffentlichen Schlüssel werden von den Kommunikationspartner ausgetauscht, steht einem der öffentliche Schlüssel eines Kommunikationspartners parat, so kann man Daten für diese Person verschlüsseln, die nur mit dem dazugehörigen privaten Schlüssel dieser Person wieder zu entschlüsseln sind.
+\\
+\\
+(2a) \quad Da symmetrische Verschlüsselungsverfahren performanter sind, wäre ein mögliches Einsatzszenario z.B. der Versand sehr großer Nachrichten / Datenmengen von Alice an Bob. Für sehr vertrauliche Daten eignet sich hingegen eher die Kommunikation mit asymmetrischen Verschlüsselungsverfahren, da hier eine höhere Sicherheit vorherrscht. Abgesehen davon ist die zu verwaltende Schlüsselmenge bei mehreren Kommunikationspartnern bei asymmetrischen Systemen kleiner.
+\\
+Deshalb bietet sich allgemein ein hybrides Verfahren an, da alle oben aufgezählten Vorteile von symmetrischen und asymmetrischen Verfahren kombiniert werden: Sicherheit, Geschwindigkeit auch bei großen Datenmengen und einfacher zu verwaltende Schlüssel.
+\\
+\\
+(2b) \quad Konkret würde Alice dann die Nachricht $N$ mit einem zufällig generiertem Schlüssel $S_s$ symmetrisch verschlüsseln. Dieser symmetrische Schlüssel $S_s$ wird von Alice dann mit dem öffentlichen Schlüssel $K^{B}_{p}$ von Bob asymmetrisch verschlüsselt. Danach schickt Alice die Daten an Bob. Bob kann dann mit seinem privaten Schlüssel $K^{B}_{s}$ den verschlüsselten Schlüssel $S_s$ entschlüsseln und mit diesem dann die symmetrisch verschlüsselte Nachricht $N$ wieder entschlüsseln.
+\\
+\\
+(2c) \quad In der Nachricht $N$ sind die Daten, der eigentliche Kommunikationsinhalt gespeichert. Die Nachricht $N$ ist mit dem zufällig generierten Schlüssel $S_s$ symmetrisch verschlüsselt (z.B. mit AES, der Advanced Encryption Standard ist weitverbreitet und wird häufig genutzt). Der Schlüssel $S_s$ selbst wiederum ist mit dem öffentlichen Schlüssel $K^{B}_{p}$ von Bob asymmetrisch verschlüsselt. Sowohl $N$ als auch $S_s$ könnte Alice so sicher zusammen, z.B. in einer E-Mail an Bob, schicken. $N$ und $S_s$ könnten aber auch getrennt voneinander übermittelt werden.
+
+\newpage
+
+\aufgabe{Parkhaus}
+
+(2) \quad \textbf{Schwächen des Systems}: Auf den Tickets ist zu erkennen, dass der Barcode an der ersten Stelle stets der gleiche zu sein scheint. So haben alle Besucher des Kinos den Barcode \enquote{32} erhalten, der ihnen das Parken für 2,50 Eur ermöglicht. Außerdem tauchen noch Barcodes mit den Bezeichnungen \enquote{34} und \enquote{36} auf, zu denen vermutlich auch der Einzelhändler mit den vergünstigten Parktickets gehört. So könnten sich versierte Individuen also selbst diesen Barcode auf ihre Parktickets drucken um vergünstigt zu parken.
+
+\textbf{Angreifermodell}:
+\begin{enumerate}
+	\item \textbf{Rollen des Angreifers:} Außenstehender, Benutzer
+	\item \textbf{Verbreitung des Angreifers:} Der Angreifer hat lediglich Zugriff auf die Parktickets, nicht die Automaten
+	\item \textbf{Verhalten des Angreifers:} aktiv; vorhandene Parktickets werden verändert
+	\item \textbf{Rechenkapazität des Angreifers:} zum fälschen eines Parktickets wird keine besondere Rechenkapazität benötigt, der entsprechende Code muss nur korrekt aufgedruckt werden
+\end{enumerate}
+
+(3) \quad Anstatt den Rabattcode unverschlüsselt aufzudrücken, könnte man ein hybrides Verschlüsselungssystem nutzen. Man definiert fixe Rabattcodes, z.B. \enquote{R01} für 2,50 Eur Rabatt. Das macht man für jeden Rabattvorteil den ein Geschäft vergeben können soll. Außerdem wählt man ein asymmetrisches Verfahren aus und erzeugt für den Kassenautomaten ein Schlüsselpaar, bestehend aus privatem und öffentlichen Schlüssel. Der öffentliche Schlüssel wird an die Geschäfte verteilt.
+\\
+Bei Vergabe eines Rabatts beispielsweise vom Kino wird dann ein zufälliger Schlüssel $S$ für eine symmetrische Verschlüsselung erzeugt, mit dem man den Rabattcode, z.B. \enquote{R01}, verschlüsselt. Der Schlüssel $S$ wird dann mit dem öffentlichen Schlüssel des Kassenautomaten asymmetrisch verschlüsselt. Beides wird auf das Parkticket aufgedruckt. Der Kassenautomat entschlüsselt nun mit seinem privaten Schlüssel den Schlüssel $S$ und entschlüsselt danach den Rabattcode mit dem Schlüssel $S$.
+\\
+Bei diesem System würde sich der aufgedruckte Rabattcode ständig ändern, weil er immer mit einem zufälligem symmetrischen Schlüssel verschlüsselt ist. Kein Angreifer könnte einen Rabattcode einfach kopieren. Da der private Schlüssel des Kassenautomaten geheim ist, könnte ein potentieller Angreifer auch nicht die geheimen Rabattcodes auslesen, da er den Schlüssel $S$ nicht entschlüsseln kann. Somit könnte er auch nicht einfach selbst die Rabattcodes erzeugen.
+
+
+
+\aufgabe{Authentifizierungsprotokolle}
+
+
+
+\aufgabe{?Mensch ärgere Dich nicht? über das Telefon}
+
+
+
+\aufgabe{RSA-Verfahren}
+
+
+
+\end{document}
